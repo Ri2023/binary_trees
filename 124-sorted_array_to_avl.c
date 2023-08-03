@@ -15,13 +15,11 @@ avl_t *tree_builder(avl_t *rb000, int *rb050, int rb026)
 {
 	/* ebv nd */
 	int *rb007 = NULL, *rb008 = NULL;
-
 	int rb039 = 0, rb040 = 0, rb051 = 0;
 
 	avl_t *rb013 = NULL, *rb014 = NULL, *rb018 = NULL;
 
-	if ((rb026 > 0)
-		&& (rb050 != NULL))
+	if ((rb026 > 0) && (rb050 != NULL))
 	{
 		rb013 = malloc(sizeof(avl_t)); /* ebv nd */
 		/* ebv nd */
@@ -37,7 +35,6 @@ avl_t *tree_builder(avl_t *rb000, int *rb050, int rb026)
 				rb007 = rb050; /* ebv nd */
 				/* ebv nd */
 				rb014 = tree_builder(rb013, rb007, rb039);
-
 			}
 			/* ebv nd */
 			if (rb040 > 0)
@@ -46,7 +43,6 @@ avl_t *tree_builder(avl_t *rb000, int *rb050, int rb026)
 				rb008 = rb050 + rb039 + 1; /* ebv nd */
 				rb018 = tree_builder(rb013, rb008, rb040);
 			}
-
 			rb013->parent = rb000;
 			/* ebv nd */
 			rb013->left = rb014;

@@ -17,8 +17,7 @@ void enqueue_item_2(binary_tree_t **rb052, binary_tree_t **rb053,
 	binary_tree_t *rb042;
 	binary_tree_t *rb005 = (binary_tree_t *)rb054;
 
-	if ((rb052 != NULL)
-		&& (rb053 != NULL))
+	if ((rb052 != NULL) && (rb053 != NULL))
 	{
 		/* jk vk dkbv */
 		rb042 = malloc(sizeof(binary_tree_t)); /* jk vk */
@@ -109,8 +108,7 @@ binary_tree_t *dequeue_item_2(binary_tree_t **rb052,
 int binary_tree_is_complete(const binary_tree_t *rb004)
 {
 	binary_tree_t *rb057 = NULL;
-	binary_tree_t *rb058 = NULL;
-	binary_tree_t *rb059 = NULL;
+	binary_tree_t *rb058 = NULL, *rb059 = NULL;
 
 	int rb013 = 0, rb035 = 0, rb037 = 0;
 
@@ -123,9 +121,7 @@ int binary_tree_is_complete(const binary_tree_t *rb004)
 		{
 			rb059 = rb057; /* jk vk dkbv */
 			if (rb059->parent == NULL)
-			{
 				rb035 = 1; /* jk vk dkbv */
-			}
 			else
 			{
 				if (rb035 == 1)
@@ -135,19 +131,15 @@ int binary_tree_is_complete(const binary_tree_t *rb004)
 				}
 				else if (rb059->parent != NULL)
 				{
-					enqueue_item_2(
-						&rb057, &rb058,
+					enqueue_item_2(&rb057, &rb058,
 						&rb013, (void *)(rb059->parent->left) /* jk vk */
 					);
-
-					enqueue_item_2(
-						&rb057, &rb058,
+					enqueue_item_2(&rb057, &rb058,
 						&rb013, (void *)(rb059->parent->right) /* jk vk */
 					);
 				}
 			}
-			dequeue_item_2(&rb057,
-				&rb058, &rb013); /* jk vk dkbv */
+			dequeue_item_2(&rb057, &rb058, &rb013); /* dkbv */
 		}
 		while (rb013 > 0)
 			dequeue_item_2(&rb057,
